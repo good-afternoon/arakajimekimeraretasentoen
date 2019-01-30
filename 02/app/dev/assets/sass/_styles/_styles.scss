@@ -1,0 +1,56 @@
+@charset "utf-8";
+
+/*
+STYLES
+------------------------------------------------*/
+
+html, body {
+  height: 100%;
+  overflow: hidden;
+}
+
+.lines {
+  width: 100%;
+  height: 100%;
+  position: relative;
+  display: flex;
+  justify-content: center;
+  background: rgba(204, 134, 84, 1);
+  overflow: hidden;
+  &__item {
+    margin: auto;
+    display: inline-block;
+    position: absolute;
+    width: 400vw;
+    height: 400vw;
+    left: -200vw;
+    border-radius: 40%;
+    transform: translate3d(0, 0, 0);
+    animation: rotation 73s ease infinite;
+    bottom: 50vh;
+    background: rgba(187, 63, 32, 1);
+  }
+}
+
+@keyframes rotation {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+.name {
+  position: fixed;
+  bottom: -5px;
+  right: -2px;
+  -webkit-writing-mode: vertical-rl;
+  -ms-writing-mode: tb-rl;
+  writing-mode: vertical-rl;
+  z-index: 9;
+  font-size: 5vh;
+  line-height: 1;
+  font-weight: bold;
+  font-feature-settings : "palt";
+}

@@ -1,0 +1,73 @@
+@charset "utf-8";
+
+/*
+STYLES
+------------------------------------------------*/
+
+html, body {
+  height: 100%;
+  overflow: hidden;
+}
+
+.lines {
+  width: 100%;
+  height: 100%;
+  position: relative;
+  display: flex;
+  justify-content: center;
+  background: rgba(38, 28, 29, 1);
+  overflow: hidden;
+  &__item {
+    margin: auto;
+    display: inline-block;
+    position: absolute;
+    width: 400vw;
+    height: 400vw;
+    left: -200vw;
+    border-radius: 40%;
+    opacity: 0.8;
+    transform: translate3d(0, 0, 0);
+    &.-top {
+      animation: rotation 50s ease infinite 2s;
+      bottom: 40vh;
+      background: rgba(248, 232, 21, 1);
+      left: 0;
+      z-index: 1;
+    }
+    &.-middle {
+      animation: rotation 73s ease infinite;
+      bottom: 50vh;
+      background: rgba(25, 97, 172, 1);
+      z-index: 0;
+    }
+    &.-bottom {
+      animation: rotation 60s ease infinite 1s;
+      top: 40vh;
+      background: rgba(187, 63, 32, 1);
+      z-index: 2;
+    }
+  }
+}
+
+@keyframes rotation {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+.name {
+  position: fixed;
+  bottom: -5px;
+  right: -2px;
+  -webkit-writing-mode: vertical-rl;
+  -ms-writing-mode: tb-rl;
+  writing-mode: vertical-rl;
+  z-index: 9;
+  font-size: 5vh;
+  line-height: 1;
+  font-weight: bold;
+  font-feature-settings : "palt";
+}
